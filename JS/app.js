@@ -46,5 +46,20 @@ document.getElementById('calculator').addEventListener('click', function () {
     }
 })
 document.getElementById('submit-btn').addEventListener('click', function () {
+    const displayPinFieldString = document.getElementById('pin-display');
+    const displayPinNumber = parseInt(displayPinFieldString.value);
 
-})
+    const typedNumberFildString = document.getElementById('typed-number-field')
+    const typedNumberFild = parseInt(typedNumberFildString.value);
+    const pinSuccsessMassege = document.getElementById('pin-success');
+    const pinFailledMassege = document.getElementById('pin-failed');
+    if (displayPinNumber === typedNumberFild) {
+        pinSuccsessMassege.style.display = 'block';
+        pinFailledMassege.style.display = 'none';
+
+    }
+    else {
+        pinFailledMassege.style.display = 'block';
+        pinSuccsessMassege.style.display = 'none';
+    }
+});
